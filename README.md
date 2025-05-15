@@ -1,0 +1,1 @@
+# strong-myfitnesspal-buddy
