@@ -1,8 +1,33 @@
-# Strong-MyFitnessPal Buddy
+# SynergyFit Insights
 
-A comprehensive fitness analysis tool that processes data from Strong (workout tracking) and MyFitnessPal/SynergyFit (nutrition and weight tracking) to provide actionable insights for your fitness journey.
+A comprehensive fitness analysis tool that processes data from Strong (workout tracking) and MyFitnessPal (nutrition and weight tracking) to provide actionable insights for your fitness journey. The application includes both a Python core analysis engine and a modern web interface.
 
-## Core Python Analysis Tool
+## Web Application (New!)
+
+SynergyFit Insights now includes a full web application with an intuitive interface built on Next.js and a Flask API backend. The web app makes it easy to:
+
+- Upload your fitness data files in a user-friendly interface
+- Customize your analysis with preference settings
+- View beautiful interactive charts of your workout and nutrition progress
+- Get personalized recommendations based on your goals
+- Track your progress over time
+
+### Tech Stack
+
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS, Chart.js, React Query
+- **Backend**: Flask, Pandas, NumPy
+
+### Running the Web Application
+
+To start both the frontend and backend servers with a single command:
+
+```bash
+./start-app.sh
+```
+
+Then open your browser to http://localhost:3000
+
+## Core Python Analysis Engine
 
 ### Overview
 
@@ -85,20 +110,88 @@ fitness_analyzer/
     └── nutrition_models.py # Nutrition data structures
 ```
 
-## Future Development
+## Web Application Setup and Usage
 
-### Web Application (Coming Soon)
+### Prerequisites
 
-*This section will be expanded as the web application is developed.*
+- Node.js (v18 or later)
+- Python 3.8+
+- pip (Python package manager)
+- npm (Node package manager)
 
-In the future, this project will be extended with a web-based interface that provides:
+### Installation
 
-- Interactive dashboards for visualizing progress
-- Easy data import and management
-- Goal setting and tracking
-- Customizable reports and recommendations
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/strong-myfitnesspal-buddy.git
+   cd strong-myfitnesspal-buddy
+   ```
 
-Stay tuned for updates on the web application development!
+2. Install Python dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Install frontend dependencies:
+   ```
+   cd synergyfit-insights-frontend
+   npm install
+   ```
+
+### Running the Application
+
+#### Option 1: Using the start script
+
+Simply run:
+```
+./start-app.sh
+```
+
+This will start both the backend and frontend servers.
+
+#### Option 2: Starting servers manually
+
+1. Start the backend server:
+   ```
+   # In the project root directory
+   python app.py
+   ```
+
+2. In a separate terminal, start the frontend server:
+   ```
+   # Navigate to frontend directory
+   cd synergyfit-insights-frontend
+   npm run dev
+   ```
+
+3. Open your browser and navigate to:
+   - Frontend: http://localhost:3000
+   - API (backend): http://localhost:5000
+
+### Using the Application
+
+1. **Prepare your data files**:
+   - Export your workout data from Strong app as CSV
+   - Export your nutrition diary from MyFitnessPal as CSV
+   - Export your weight tracking data from MyFitnessPal as CSV
+
+2. **Upload your files**:
+   - Use the file upload forms on the main page
+   - Ensure you select the correct file for each input
+
+3. **Configure your preferences**:
+   - Set your fitness goals
+   - Enter personal details like height, weight, and age
+   - Select target exercises for detailed analysis
+
+4. **Analyze your data**:
+   - Click the "Analyze My Data" button
+   - Wait for the analysis to complete (this may take a few moments)
+
+5. **Review your insights**:
+   - Explore the generated charts and visualizations
+   - Read through personalized recommendations
+   - Use the insights to adjust your training and nutrition
 
 ## License
 
